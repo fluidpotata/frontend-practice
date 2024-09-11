@@ -192,7 +192,7 @@ const daySelect = document.getElementById('day');
 const timeSelect = document.getElementById('time');
 const resultDiv = document.getElementById('result');
 const form = document.getElementById('inpform'); 
-let stat = false;
+// let stat = false;
 
 function displayResult() {
     stat = true;
@@ -220,11 +220,9 @@ function displayResult() {
     }
 }
 
-if (stat)  {
-  displayResult();
-}
+displayResult();
 
 
-// daySelect.addEventListener('change', displayResult);
-// timeSelect.addEventListener('change', displayResult);
-form.addEventListener('submit', displayResult);
+daySelect.addEventListener('change', displayResult);
+timeSelect.addEventListener('change', displayResult);
+// form.addEventListener('submit', displayResult);
