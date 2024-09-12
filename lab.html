@@ -1,50 +1,60 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Document</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
-        . {
-            margin: auto;
-          }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
         .wrap {
-                /* margin: auto; */
-                height: 720px;
-                width: 720px;
-                text-align: center;
-                align-content: center;
-                margin-left: 30vw;
-         }
-         .anotherwrap {
-                display: flex;
-                height: 99vh;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-         }
-         .inpform {
-                background-color: bisque;
-                border-style: solid;
-                border-color: black;
-                padding: 50px 50px 0px;
-                margin-bottom: 0;
-                border-bottom: 0;
-                width: 300px;
-         }
-         .result{
-                background-color: bisque;
-                border-style: solid;
-                border-color: black;
-                padding: 10px 50px 45px;
-                width:300px;
-                margin-top: 0;
-                border-top: 0;
-         }
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .inpform {
+            background-color: bisque;
+            border-style: solid;
+            border-color: black;
+            padding: 20px;
+            margin-bottom: 0;
+            border-bottom: 0;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .result {
+            background-color: bisque;
+            border-style: solid;
+            border-color: black;
+            padding: 10px 20px;
+            width: 100%;
+            max-width: 300px;
+            margin-top: 0;
+            border-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select {
+            width: 100%;
+            padding: 5px;
+        }
     </style>
 </head>
 <body>
-    <div class = "wrap">
-        <div class = "anotherwrap">
-            <form class="inpform" id="inpform">
+    <div class="wrap">
+        <form class="inpform" id="inpform">
             <label for="day">Enter Day:</label>
             <select name="day" id="day">
                 <option value="SAT">SAT</option>
@@ -53,20 +63,18 @@
                 <option value="TUE">TUE</option>
                 <option value="WED">WED</option>
                 <option value="THU">THU</option>
-            </select><br>
+            </select>
+
             <label for="time">Enter Time:</label>
             <select name="time" id="time">
                 <option value="8:00 AM">08:00AM - 10:50PM</option>
                 <option value="11:00 AM">11:00AM - 01:50PM</option>
                 <option value="2:00 PM">02:00PM - 04:50PM</option>
-            </select><br>
-            <!-- <input type="submit" value="Submit"> -->
-        </form>
+            </select>
+
+            </form>
         <div class="result" id="result"></div>
-        </div>
     </div>
     <script src="lab.js"></script>
 </body>
 </html>
-
-
