@@ -1,36 +1,36 @@
-const taskList = []; // Array to store tasks
+const taskList = [];
 
 document.getElementById('taskForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault();
 
-    // Get the input values
+
     const taskName = document.getElementById('taskName').value;
     const dueDate = document.getElementById('dueDate').value;
     const dueTime = document.getElementById('dueTime').value;
 
-    // Create a task object
+
     const task = {
         name: taskName,
         dueDate: dueDate,
         dueTime: dueTime,
     };
 
-    // Add task to the list
+
     taskList.push(task);
 
-    // Save tasks to localStorage
+
     saveTasks();
 
-    // Display the task
+
     displayTasks();
 
-    // Clear the form fields
+
     document.getElementById('taskForm').reset();
 });
 
 function displayTasks() {
     const taskListElement = document.getElementById('taskList');
-    taskListElement.innerHTML = ''; // Clear the list before rendering
+    taskListElement.innerHTML = '';
 
     taskList.forEach(task => {
         const li = document.createElement('li');
@@ -71,5 +71,5 @@ function loadTasks() {
     }
 }
 
-// Load tasks when the page loads
+
 window.onload = loadTasks;
