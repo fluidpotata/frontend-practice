@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Countdown</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+body {
+    background-color: #f0f8ff;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+    }
+
+    .course-box {
+        background-color: #ffffff;
+        border: 1px solid #000000;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 300px;
+        margin: 15px;
+        text-align: center;
+    }
+
+    .course-name {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .countdown {
+        font-size: 1.2rem;
+        color: #ff4500;
+    }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="course-box">
+            <div class="course-name"></div>
+            <div class="exam-date">Exam Date: <span>2024-12-20</span> at <span>14:00</span></div>
+            <div class="countdown">Time until exam: <span id="countdown1">0</span></div>
+        </div>
+        <div class="course-box">
+            <div class="course-name"></div>
+            <div class="exam-date">Exam Date: <span>2024-12-22</span> at <span>10:00</span></div>
+            <div class="countdown">Time until exam: <span id="countdown2">0</span></div>
+        </div>
+        <div class="course-box">
+            <div class="course-name"></div>
+            <div class="exam-date">Exam Date: <span>2024-12-24</span> at <span>09:00</span></div>
+            <div class="countdown">Time until exam: <span id="countdown3">0</span></div>
+        </div>
+        <div class="course-box">
+            <div class="course-name"></div>
+            <div class="exam-date">Exam Date: <span>2024-12-26</span> at <span>16:00</span></div>
+            <div class="countdown">Time until exam: <span id="countdown4">0</span></div>
+        </div>
+        <div class="course-box">
+            <div class="course-name"></div>
+            <div class="exam-date">Exam Date: <span>2024-12-28</span> at <span>11:00</span></div>
+            <div class="countdown">Time until exam: <span id="countdown5">0</span></div>
+        </div>
+    </div>
+
+    <script>
+
+    const examSchedules = [
+        { name: 'CSE423', date: '2024-09-29', time: '16:30' },
+        { name: 'CSE420', date: '2024-10-01', time: '16:30' },
+        { name: 'CSE330', date: '2024-10-02', time: '16:30' },
+        { name: 'CSE422', date: '2024-10-03', time: '16:30' },
+        { name: 'CSE340', date: '2024-10-04', time: '17:00' }
+    ];
+
+    function updateCountdown() {
+        const now = new Date();
+
+        examSchedules.forEach((schedule, index) => {
+
+            const examDateTime = new Date(`${schedule.date}T${schedule.time}:00`);
+            const timeDiff = examDateTime - now;
+
+            document.querySelectorAll('.course-name')[index].innerText = schedule.name;
+
+            if (timeDiff > 0) {
+                const daysLeft = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                const hoursLeft = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutesLeft = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                const secondsLeft = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+                document.getElementById(`countdown${index + 1}`).innerText = 
+                    `${daysLeft}d ${hoursLeft}h ${minutesLeft}m ${secondsLeft}s`;
+            } else {
+                document.getElementById(`countdown${index + 1}`).innerText = 'Exam passed!';
+            }
+        });
+    }
+
+    setInterval(updateCountdown, 1000);
+
+    </script>
+
+</body>
+</html>
