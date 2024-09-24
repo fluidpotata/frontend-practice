@@ -19,6 +19,9 @@
         font-weight: bold;
         color: red;
       }
+      .assignment-center {
+            text-align: center;
+      }
       @media (max-width: 576px) {
         .card-body {
           text-align: center;
@@ -146,6 +149,7 @@
               const paragraph = document.createElement("p");
 
               if (section === "Assignment") {
+                paragraph.className = 'assignment-center';
                 const [link, deadline] = sectionData[item];
                 const deadlineDate = new Date(deadline);
                 const deadlineTime = deadlineDate.toLocaleTimeString([], {
@@ -157,6 +161,7 @@
                   deadline
                 )}</span>`;
               } else if (section === "Quiz") {
+                paragraph.className = 'assignment-center';
                 const [date, link1, link2] = sectionData[item];
                 const quizDate = new Date(date);
                 const quizTime = quizDate.toLocaleTimeString([], {
