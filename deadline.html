@@ -83,24 +83,41 @@
 
       };
 
-      function createCountdown(deadline) {
+    //   function createCountdown(deadline) {
+    //     const deadlineDate = new Date(deadline).getTime();
+    //     const now = new Date().getTime();
+    //     const timeRemaining = deadlineDate - now;
+
+    //     if (timeRemaining <= 0) {
+    //       return "Deadline passed";
+    //     }
+
+    //     const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    //     return `${days} day(s) left`;
+    //   }
+    function createCountdown(deadline) {
         const deadlineDate = new Date(deadline).getTime();
         const now = new Date().getTime();
         const timeRemaining = deadlineDate - now;
 
         if (timeRemaining <= 0) {
-          return "Deadline passed";
+            return "Deadline passed";
         }
 
         const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-        return `${days} day(s) left`;
-      }
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-      function slugify(text) {
+        return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+
+    function slugify(text) {
         return text.replace(/\s+/g, "-").toLowerCase(); // Replaces spaces with hyphens and makes it lowercase.
-      }
+    }
 
-      function renderCourseData() {
+    function renderCourseData() {
         const courseContainer = document.getElementById("course-container");
 
         for (const courseName in courseData) {
@@ -209,9 +226,9 @@
           rowDiv.appendChild(courseCard);
           courseContainer.appendChild(rowDiv);
         }
-      }
+    }
 
-      renderCourseData();
+    renderCourseData();
     </script>
 
     <!-- Correct Bootstrap Bundle to enable Accordion functionality -->
