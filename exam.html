@@ -8,14 +8,14 @@
     <style>
     html, body {
         background-color: #f0f8ff;
-        height: 120%; /* Ensure body takes the full height */
+        height: 120%; 
         margin: 0;
         display: flex;
         justify-content: center;
         align-items: center;
         font-weight: bold;
-        overflow-y: auto; /* Allow vertical scrolling if content overflows */
-        overflow-x: hidden; /* Prevent horizontal scroll overflow */
+        overflow-y: auto; 
+        overflow-x: hidden;
     }
 
     .container {
@@ -23,12 +23,12 @@
         flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;
-        max-width: 100%; /* Ensure the container doesn't overflow */
+        max-width: 100%;
         padding: 20px;
         overflow: auto;
     }
 
-    /* Course box styling */
+
     .course-box {
         background-color: #ffffff;
         border: 1px solid #ddd;
@@ -50,7 +50,7 @@
         color: #ff4500;
     }
 
-    /* Responsive styling for mobile devices */
+
     @media (max-width: 768px) {
         html, body {
             flex-direction: column;
@@ -84,7 +84,6 @@
             text-align: center;
         }
 
-        /* Dark mode styling */
         body.dark-mode {
             background-color: #121212;
             color: #ffffff;
@@ -138,15 +137,8 @@
             <div class="exam-date">Exam Date: <span>2024-12-26</span> at <span>16:00</span></div>
             <div class="countdown">Time until exam: <span id="countdown4">0</span></div>
         </div>
-        <div class="course-box">
-            <div class="course-name"></div>
-            <div class="exam-date">Exam Date: <span>2024-12-28</span> at <span>11:00</span></div>
-            <div class="countdown">Time until exam: <span id="countdown5">0</span></div>
-        </div>
-    </div>
 
     <script>
-    // Toggle dark mode
     function toggleDarkMode() {
         document.body.classList.toggle('dark-mode');
     }
@@ -155,8 +147,7 @@
         { name: 'CSE423', date: '2024-09-29', time: '16:30' },
         { name: 'CSE420', date: '2024-10-01', time: '16:30' },
         { name: 'CSE330', date: '2024-10-02', time: '16:30' },
-        { name: 'CSE422', date: '2024-10-03', time: '16:30' },
-        { name: 'CSE340', date: '2024-10-04', time: '17:00' }
+        { name: 'CSE422', date: '2024-10-03', time: '16:30' }
     ];
 
     function updateCountdown() {
