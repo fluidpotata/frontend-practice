@@ -195,7 +195,7 @@ const form = document.getElementById('inpform');
 // let stat = false;
 
 function displayResult() {
-    stat = true;
+    // stat = true;
     const selectedDay = daySelect.value;
     const selectedTime = timeSelect.value;
 
