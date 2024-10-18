@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USIS static</title>
+    <title>Live Seat Status</title>
     <style>
+        body {
+            background-color: #EEEEEE;
+            color: #222831;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -17,28 +21,35 @@
             text-align: left;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #393E46;
+            color: #EEEEEE;
         }
         #search {
+            background-color: #393E46;
+            color: #EEEEEE;
             margin-bottom: 10px;
             padding: 8px;
             width: 100%;
             box-sizing: border-box;
         }
+        a:hover,a:checked {
+            color: #00ADB5;
+        }
+    
     </style>
 </head>
 <body>
-    <h1>USIS Data Dump!!</h1>
+    <h1 style="color:#222831">USIS Live Dump!!</h1>
     <input type="text" id="search" placeholder="Search...">
-    <h2 id="last-updated"></h2>
+    <h2 id="last-updated" style="color:#393E46"></h2>
     <h3 style="color:red">If nothing is loading, <a href="https://ibb.co.com/zhbYd4d">Follow this</a><br>For android you can use UC Browser</h3>
     <table id="data-table">
         <thead>
             <tr>
-                <th>No.</th>
-                <th>CID</th>
+                <th>SL</th>
+                <th>ID</th>
                 <th>Code</th>
-                <th>Pre-Requisite</th>
+                <th>Equivalent</th>
                 <th>Program</th>
                 <th>Type</th>
                 <th>Credits</th>
