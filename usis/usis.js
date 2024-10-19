@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const apiUrl = 'http://4.227.165.27:5001/data';
+    const apiUrl = 'https://learning-potata.vercel.app/api/data';
     // const apiUrl = 'http://127.0.0.1:5000/data';
     fetch(apiUrl)
     .then(response => {
