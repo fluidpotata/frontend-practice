@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function populateTable(data) {
     tableBody.innerHTML = "";
-    data.rows.forEach((row) => {
+    data.forEach((row) => {
         const tr = document.createElement("tr");
         row.cell.forEach((cell) => {
         const td = document.createElement("td");
