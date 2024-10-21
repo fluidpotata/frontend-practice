@@ -52,5 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
     searchInput.addEventListener("keyup", () => {
       filterTable(searchInput.value);
     });
-  });
+
+
+    setInterval(function() {
+        location.reload();
+    }, 60000);
   
+  });
