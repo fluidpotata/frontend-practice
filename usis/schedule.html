@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usis Static Dump</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        input[type="text"] {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>Usis Dump</h1>
+    <input type="text" id="search-input" placeholder="Search by course code/title/instructor">
+    <h3 style="color: red;">Not Live Data! Last Updated at 17/10/2024 09:08PM</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Code</th>
+                <th>Title</th>
+                <th>Section</th>
+                <th>Seats</th>
+                <th>School</th>
+                <th>School Code</th>
+                <th>Instructor</th>
+                <th>Initial</th>
+                <th>Final Date</th>
+                <th>Final Time</th>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>SaturdayS</th>
+            </tr>
+        </thead>
+        <tbody id="data-table">
+
+        </tbody>
+    </table>
+
+    <script src="schedule.js"></script>
+</body>
+</html>
