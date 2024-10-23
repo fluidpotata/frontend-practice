@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const apiUrl = 'https://learning-potata.vercel.app/api/data';
+    // const apiUrl = 'https://learning-potata.vercel.app/api/data';
+    const apiUrl = 'https://random-fluidpotata.vercel.app/usis/response.json';
     // const apiUrl = 'http://127.0.0.1:5000/data';
     fetch(apiUrl)
     .then(response => {
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then(jsonData => {
         populateTable(jsonData.data);
-        document.getElementById("last-updated").textContent = `Last Updated: ${jsonData.last_modified}`;
+        // document.getElementById("last-updated").textContent = `Last Updated: ${jsonData.last_modified}`;
 
     })
     .catch(error => {
@@ -54,8 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    setInterval(function() {
-        location.reload();
-    }, 60000);
+    // setInterval(function() {
+    //     location.reload();
+    // }, 60000);
   
   });
