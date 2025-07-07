@@ -1,5 +1,6 @@
 const data = 
-{SAT: { 
+{
+ SAT: { 
  "8:00 AM": [
  "FT10-02L", 
  "FT11-04L", 
@@ -145,7 +146,7 @@ THU: {
  "12F-30L", 
  "12D-27L", 
 ],
-}
+}}
 const daySelect = document.getElementById("day");
 const timeSelect = document.getElementById("time");
 const resultDiv = document.getElementById("result");
